@@ -1,11 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inserir Alunos</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  #container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  #student-list {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+  }
+  .student-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+  }
+</style>
+<title>Registro de Alunos</title>
 </head>
 <body>
-    <h5>Alunos</h5>
+<div id="container">
+  <h2>Registro de Alunos</h2>
+  <label for="name">Nome do Aluno:</label>
+  <input type="text" id="name" placeholder="Nome do aluno">
+  <label for="score">Nota do Aluno:</label>
+  <input type="number" id="score" placeholder="Nota do aluno">
+  <button onclick="addStudent()">Adicionar Aluno</button>
+  <ul id="student-list"></ul>
+</div>
+
+<script>
+  function addStudent() {
+    const nameInput = document.getElementById("name");
+    const scoreInput = document.getElementById("score");
+    const name = nameInput.value;
+    const score = parseFloat(scoreInput.value);
+
+    if (name.trim() === "" || isNaN(score)) {
+      alert("Por favor, insira um nome válido e uma nota numérica.");
+      return;
+    }
+
+    const studentList = document.getElementById("student-list");
+    const studentItem = document.createElement("li");
+    studentItem.classList.add("student-item");
+    studentItem.innerHTML = `
+      <span>${name}</span>
+      <span>${score}</span>
+    `;
+    studentList.appendChild(studentItem);
+
+    nameInput.value = "";
+    scoreInput.value = "";
+  }
+</script>
 </body>
 </html>
