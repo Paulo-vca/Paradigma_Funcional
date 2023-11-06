@@ -1,90 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  #container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  #student-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    border-top: 1px solid #ccc;
-  }
-  .student-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 0;
-    border-bottom: 1px solid #ccc;
-    font-weight: bold;
-  }
-  .student-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
-  }
-  .student-item span {
-    flex: 1;
-    text-align: center;
-  }
-</style>
-<title>Registro de Alunos</title>
+  <meta charset="UTF-8">
+  <meta nome="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>06-11-2023</title>
 </head>
+
 <body>
-<div id="container">
-  <h2>Registro de Alunos</h2>
-  <label for="name">Nome do Aluno:</label>
-  <input type="text" id="name" placeholder="Nome do aluno">
-  <label for="score">Nota do Aluno:</label>
-  <input type="number" id="score" placeholder="Nota do aluno">
-  <button onclick="addStudent()">Adicionar Aluno</button>
-  <ul id="student-list">
-    <li class="student-header">
-      <span>Nome</span>
-      <span>Nota</span>
-    </li>
+  <h1>Alunos</h1>
+  <hr />
+  <br>
+  <label for="filtro">Filtrar:</label>
+  <input type="text" id="filtro" placeholder="Digite o nome do aluno">
+
+  <table id="tabeladeestudante">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Nota</th>
+      </tr>
+    </thead>
+    <tbody id="estudantesb">
+    </tbody>
+  </table>
+
+  <h1>Novo Aluno</h1>
+  <hr />
+  <!-- <br> -->
+  <ul>
+    <li>O nome não pode ser em branco</li>
+    <li>A nota não pode ser em branco</li>
   </ul>
-</div>
-
-<script>
-  function addStudent() {
-    const nameInput = document.getElementById("name");
-    const scoreInput = document.getElementById("score");
-    const name = nameInput.value;
-    const score = parseFloat(scoreInput.value);
-
-    if (name.trim() === "" || isNaN(score)) {
-      alert("Por favor, insira um nome válido e uma nota numérica.");
-      return;
-    }
-
-    const studentList = document.getElementById("student-list");
-    const studentItem = document.createElement("li");
-    studentItem.classList.add("student-item");
-    studentItem.innerHTML = `
-      <span>${name}</span>
-      <span>${score}</span>
-    `;
-    studentList.appendChild(studentItem);
-
-    nameInput.value = "";
-    scoreInput.value = "";
-  }
-</script>
+  <div id="inputs">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" nome="nome" placeholder="digite o nome do aluno">
+    <br>
+    <label for="nota">Nota:</label>
+    <input type="text" id="nota" nome="nota" placeholder="digite a nota do aluno">
+    <br>
+    <button id="botao">Adicionar</button>
+  </div>
+  <script src="scripts.js"></script>
 </body>
-</html>
 
+</html>

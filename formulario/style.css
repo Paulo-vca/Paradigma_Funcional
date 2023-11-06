@@ -1,0 +1,64 @@
+body {
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+ul{
+  color: #ff0000;
+}
+
+input[type="text"] {
+    /* width: 100%; */
+    padding: 12px 20px;
+    margin: 8px 0;
+    border-radius: 3px;
+}
+
+button {
+    background-color: #33bb38;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+button:hover {
+    opacity: 0.8;
+    background-color: #178f1b;
+}
+
+#filtro, #nota{
+  width: 20%;
+  display: flex;
+}
+
+#nome{
+  width: 80%;
+  display: flex;
+}
+
+
+#tabeladeestudante {
+  width: 100%;
+}
+
+#tabeladeestudante th, #tabeladeestudante td {
+  border: 1px solid #226faf;
+  padding: 8px;
+  text-align: center;
+  width: 50%;
+}
+
+#tabeladeestudante th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #3546d8;
+    color: white;
+    border: 1px solid #226faf;
+}
